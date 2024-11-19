@@ -24,7 +24,7 @@
 ### 1. Клонування або завантаження проєкту
 Завантажте файли проєкту або клонуйте репозиторій:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/YuriiPatriuk12/Java-Labs.git
    ```
 
 ### 2. Компілювання коду
