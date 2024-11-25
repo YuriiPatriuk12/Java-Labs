@@ -2,9 +2,17 @@ import SaladAndComponents.*;
 
 import java.util.Comparator;
 
+/**
+ * Клас SaladManager відповідає за керування салатом.
+ * Надає функціонал відповідно до завдання
+ */
 public class SaladManager {
     private final Salad salad;
 
+    /**
+     * Конструктор класу SaladManager.
+     * Ініціалізує салат із попередньо заданими інгредієнтами.
+     */
     public SaladManager() {
         salad = new Salad(
                 new Onion(30, 34.5, "White"),
@@ -14,6 +22,9 @@ public class SaladManager {
         );
     }
 
+    /**
+     * Демонструє функціональність класу SaladManager.
+     */
     public void test(){
         showSaladComponents();
         sortByTotalCalories();
@@ -25,6 +36,11 @@ public class SaladManager {
         findVegetableByCalories(100,10);
     }
 
+    /**
+     * Обчислює загальну кількість калорій салату.
+     *
+     * @return загальна калорійність усіх інгредієнтів салату.
+     */
     public double calculateTotalCalories() {
         double result = 0;
 
@@ -36,11 +52,20 @@ public class SaladManager {
         return result;
     }
 
+    /**
+     * Сортує компоненти салату за їхньою загальною калорійністю.
+     */
     public void sortByTotalCalories() {
         salad.getComponents().sort(Comparator.comparing(Vegetable::calculateTotalCalories));
         System.out.println("Salad has been sorted by total calories\n");
     }
 
+    /**
+     * Знаходить і відображає овоч із загальною калорійністю в заданому діапазоні.
+     *
+     * @param leftBound  нижня межа діапазону калорій включно.
+     * @param rightBound верхня межа діапазону калорій включно.
+     */
     public void findVegetableByCalories(double leftBound, double rightBound) {
         if(leftBound > rightBound) {
             System.out.println("Left bound cannot be greater than right bound!");
@@ -58,6 +83,9 @@ public class SaladManager {
 
     }
 
+    /**
+     * Виводить компоненти салату на консоль.
+     */
     public void showSaladComponents(){
         System.out.println("-------------------Salad----------------------");
         salad.showComponents();
