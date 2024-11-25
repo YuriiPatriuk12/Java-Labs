@@ -40,7 +40,7 @@
 ### 2. Компілювання коду
 Перейдіть у кореневу папку проєкту й запустіть компіляцію файлів:
    ```bash
-   javac Main.java MatrixManager.java
+   javac Main.java StringManager.java TextClasses/*.java
    ```
 
 ### 3. Запуск програми
